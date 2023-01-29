@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface StockRepository extends CrudRepository<Stock, Long> {
 
-    List<Stock> findStocksByTickerOrderByDate(String ticker);
+    List<Stock> findStocksByTickerIgnoreCaseOrderByDate(String ticker);
 }

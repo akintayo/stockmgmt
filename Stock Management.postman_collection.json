@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "e9741a5a-3b08-41be-9301-23d56d1826ff",
+		"name": "Stock Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19076498"
+	},
+	"item": [
+		{
+			"name": "Create Stock",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"quarter\": 1,\n    \"ticker\": \"AA\",\n    \"date\" : \"1/17/2011\",\n    \"daysToNextDividend\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8388/stocks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8388",
+					"path": [
+						"stocks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"type": "file",
+							"src": "/Users/akindelebankole/Downloads/dow_jones_index/dow_jones_index.data"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8388/stocks/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8388",
+					"path": [
+						"stocks",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Stock",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8388/stocks/axP2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8388",
+					"path": [
+						"stocks",
+						"axP2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

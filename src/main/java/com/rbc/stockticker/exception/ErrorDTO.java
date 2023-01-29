@@ -5,6 +5,9 @@ import lombok.Data;
 
 import java.util.Map;
 
+/**
+ * DTO for error to be sent to client
+ */
 @Data
 public class ErrorDTO {
     private String code;

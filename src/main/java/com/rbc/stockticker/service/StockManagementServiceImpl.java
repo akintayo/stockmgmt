@@ -54,7 +54,7 @@ public class StockManagementServiceImpl implements StockManagementService {
     @Override
     @Transactional(readOnly = true)
     public List<Stock> retrieveStocksByTicker(String ticker) {
-        return stockRepository.findStocksByTickerOrderByDate(ticker);
+        return stockRepository.findStocksByTickerIgnoreCaseOrderByDate(ticker);
     }
 
     @Override
