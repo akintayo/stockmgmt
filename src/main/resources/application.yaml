@@ -1,0 +1,38 @@
+server:
+  port: 8388
+  servlet:
+    context-path: /stocks
+spring:
+  sql:
+    init:
+      mode: always
+  profiles:
+    active: default
+  datasource:
+    url: jdbc:postgresql://192.168.2.33:5432/postgres
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      auto-commit: true
+      minimum-idle: 5
+      maximum-pool-size: 10
+      connection-timeout: 20000
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          create_namespaces: true
+        show_sql: true
+        generate_statistics: false
+        jdbc:
+          batch_size: 100
+        order:
+          inserts: true
+        id:
+          new_generator_mappings: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+
